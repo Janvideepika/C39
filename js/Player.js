@@ -4,14 +4,14 @@ class Player {
     this.distance = 0;
     this.name = null;
   }
-
+//reading the playercount from firebase
   getCount(){
     var playerCountRef = database.ref('playerCount');
     playerCountRef.on("value",(data)=>{
       playerCount = data.val();
     })
   }
-
+//updating the playerCount
   updateCount(count){
     database.ref('/').update({
       playerCount: count
